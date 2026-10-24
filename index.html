@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Saffron & Stone Kitchen — Artisanal Heritage Dining & Contemporary Online Food Ordering. Experience handcrafted dishes fired with ancient spice and modern flair.">
+  <meta name="author" content="M Zain Ul Abideen">
+  <title>Saffron & Stone Kitchen — Online Food Ordering</title>
+
+  <!-- Google Fonts: DM Serif Display & DM Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="page-top">
+
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Top Announcement & Status Bar -->
+  <aside class="top-bar py-1" aria-label="Restaurant status and operating information">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center small">
+      <div class="d-flex align-items-center gap-3">
+        <span><i class="bi bi-clock-history me-1 text-accent" aria-hidden="true"></i> Open Daily: <strong>12:00 PM – 11:30 PM</strong></span>
+        <span class="d-none d-md-inline text-divider">•</span>
+        <span class="d-none d-md-inline"><i class="bi bi-geo-alt me-1 text-accent" aria-hidden="true"></i> F-7 Markaz, Islamabad (Demo)</span>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <span id="current-date-display" class="d-none d-sm-inline"><i class="bi bi-calendar3 me-1 text-accent" aria-hidden="true"></i> Saturday, 24 October 2026</span>
+        <!-- Theme Toggle -->
+        <button id="theme-toggle-btn" class="btn btn-sm btn-outline-theme d-flex align-items-center gap-1" type="button" aria-label="Toggle dark and light color theme">
+          <i class="bi bi-moon-stars" id="theme-toggle-icon" aria-hidden="true"></i>
+          <span id="theme-toggle-text" class="small">Dark</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       A. HEADER & NAVIGATION
+       ========================================================================= -->
+  <header class="header sticky-top shadow-sm" id="site-header">
+    <nav class="navbar navbar-expand-lg py-3" aria-label="Main navigation">
+      <div class="container">
+        <!-- Brand Wordmark / Logo -->
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#hero">
+          <span class="brand-symbol" aria-hidden="true">
+            <i class="bi bi-fire"></i>
+          </span>
+          <div class="brand-text">
+            <span class="brand-title">Saffron &amp; Stone</span>
+            <span class="brand-subtitle">Artisanal Kitchen &amp; Hearth</span>
+          </div>
+        </a>
+
+        <!-- Mobile Toggle Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Nav Links & Quick Actions -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2 my-3 my-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#hero">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#menu">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#offers">Special Offers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#testimonials">Testimonials</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+
+          <!-- Cart Indicator & CTA -->
+          <div class="d-flex align-items-center gap-2 ms-lg-3 mt-3 mt-lg-0">
+            <a href="#order" class="btn btn-cart-indicator position-relative" aria-label="View current order cart">
+              <i class="bi bi-bag-heart fs-5" aria-hidden="true"></i>
+              <span id="nav-cart-badge" class="badge rounded-pill bg-accent cart-count-badge">0</span>
+            </a>
+            <a href="#order" class="btn btn-accent px-4 py-2 fw-semibold">
+              <i class="bi bi-cart3 me-1" aria-hidden="true"></i> Order Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content Landmark -->
+  <main id="main-content">
+
+    <!-- =========================================================================
+         B. HERO SECTION
+         ========================================================================= -->
+    <section class="hero-section py-5 py-lg-6" id="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="row align-items-center g-4 g-lg-5">
+          <!-- Text Column -->
+          <div class="col-lg-6">
+            <div class="hero-content pe-lg-3">
+              <div class="badge-pill mb-3">
+                <span class="badge bg-sage text-forest px-3 py-2 fw-semibold rounded-pill">
+                  <i class="bi bi-stars me-1 text-accent" aria-hidden="true"></i> Contemporary Heritage Gastronomy
+                </span>
+              </div>
+              <h1 class="hero-title display-4 fw-bold mb-3" id="hero-title">
+                Where Ancient Spice Meets Modern Fire.
+              </h1>
+              <p class="hero-intro lead mb-4">
+                Experience wood-fired hearth classics, slow-simmered saffron delicacies, and chef-crafted comfort food. Made fresh to order with organic, locally harvested ingredients.
+              </p>
+              
+              <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
+                <a href="#order" class="btn btn-accent btn-lg px-4 py-3 fw-bold shadow-sm">
+                  <i class="bi bi-bag-plus me-2" aria-hidden="true"></i> Order Online Now
+                </a>
+                <a href="#menu" class="btn btn-outline-forest btn-lg px-4 py-3 fw-semibold">
+                  <i class="bi bi-compass me-2" aria-hidden="true"></i> Explore Our Menu
+                </a>
+              </div>
+
+              <!-- Value Pillars -->
+              <div class="row g-3 pt-3 border-top border-sage">
+                <div class="col-4">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-shield-check text-accent fs-4" aria-hidden="true"></i>
+                    <div>
+                      <h2 class="h6 fw-bold mb-0">100% Pure</h2>
+                      <small class="text-muted">Fresh &amp; Halal</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-bicycle text-accent fs-4" aria-hidden="true"></i>
+                    <div>
+                      <h2 class="h6 fw-bold mb-0">35-45 Min</h2>
+                      <small class="text-muted">Fast Delivery</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-award text-accent fs-4" aria-hidden="true"></i>
+                    <div>
+                      <h2 class="h6 fw-bold mb-0">Wood-Fired</h2>
+                      <small class="text-muted">Artisan Hearth</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Asymmetrical Image Column -->
+          <div class="col-lg-6">
+            <div class="hero-image-wrapper position-relative">
+              <div class="hero-image-card shadow-lg rounded-4 overflow-hidden">
+                <img src="images/hero.jpg" alt="Artisanal food feast spread on a rustic wooden dining table with freshly baked sourdough bread and herbs" class="img-fluid w-100 hero-main-img" loading="eager" width="1000" height="667">
+              </div>
+              <!-- Floating Highlight Badge -->
+              <div class="floating-badge shadow-lg bg-card p-3 rounded-3 d-flex align-items-center gap-3">
+                <div class="badge-icon-box bg-sage text-forest rounded-circle p-2">
+                  <i class="bi bi-fire fs-4" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <span class="d-block text-accent fw-bold small text-uppercase letter-spacing">House Specialty</span>
+                  <strong class="d-block text-dark">Wood-Fired Sourdough &amp; Saffron Infusions</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         C. FOOD MENU SECTION
+         ========================================================================= -->
+    <section class="menu-section py-5 py-lg-6 bg-surface" id="menu" aria-labelledby="menu-heading">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="text-center max-w-700 mx-auto mb-5">
+          <span class="badge bg-sage text-forest px-3 py-1 rounded-pill fw-semibold mb-2 text-uppercase">Culinary Selection</span>
+          <h2 class="section-title display-5 fw-bold mb-3" id="menu-heading">Our Handcrafted Menu</h2>
+          <p class="text-muted">
+            Every dish is prepared upon order using small-batch culinary techniques, cold-pressed oils, and signature stone-ground spices.
+          </p>
+
+          <!-- Search & Filter Controls -->
+          <div class="menu-controls mt-4">
+            <!-- Search Bar -->
+            <div class="search-input-wrapper mb-3 position-relative max-w-500 mx-auto">
+              <i class="bi bi-search search-icon text-muted position-absolute" aria-hidden="true"></i>
+              <input type="search" id="menu-search-input" class="form-control form-control-lg ps-5" placeholder="Search burgers, pizzas, pastas, drinks..." aria-label="Search menu items">
+            </div>
+
+            <!-- Category Filter Buttons -->
+            <div class="category-filters d-flex flex-wrap justify-content-center gap-2" role="group" aria-label="Food category filters">
+              <button type="button" class="btn btn-filter active" data-category="all">All Items</button>
+              <button type="button" class="btn btn-filter" data-category="mains">Mains &amp; Hearth</button>
+              <button type="button" class="btn btn-filter" data-category="handhelds">Handhelds</button>
+              <button type="button" class="btn btn-filter" data-category="sides">Sides &amp; Drinks</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Food Menu Grid (At least 6 items required: Burger, Pizza, Pasta, Sandwich, Fries, Drink) -->
+        <div class="row g-4" id="menu-grid">
+          
+          <!-- Item 1: Burger -->
+          <div class="col-md-6 col-lg-4 menu-item-col" data-category="handhelds" data-name="Artisan Wagyu Smash Burger" data-id="burger-01">
+            <article class="card menu-card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+              <div class="menu-card-img-wrapper position-relative">
+                <img src="images/burger.jpg" alt="Artisan Wagyu Smash Burger with melted sharp cheddar, caramelized shallots, and house saffron aioli on a brioche bun" class="card-img-top menu-img" loading="lazy" width="600" height="400">
+                <span class="category-badge position-absolute top-0 start-0 m-3 badge bg-forest text-ivory rounded-pill px-3 py-1">Handheld</span>
+              </div>
+              <div class="card-body d-flex flex-column p-4">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h3 class="card-title h5 fw-bold mb-0 text-dark">Artisan Wagyu Smash Burger</h3>
+                  <span class="price-tag fw-bold text-accent h5 mb-0" aria-label="Price: 1450 Pakistani Rupees">Rs. 1,450</span>
+                </div>
+                <p class="card-text text-muted small flex-grow-1 mb-3">
+                  Two prime smash patties of grass-fed beef, melted aged cheddar, caramelized balsamic shallots, and saffron aioli on a toasted butter brioche bun.
+                </p>
+                <div class="d-flex align-items-center justify-content-between pt-2 border-top border-sage">
+                  <span class="badge bg-sage text-forest"><i class="bi bi-fire me-1" aria-hidden="true"></i> Signature</span>
+                  <button type="button" class="btn btn-sm btn-accent add-to-order-btn" data-id="burger-01" data-name="Artisan Wagyu Smash Burger" data-price="1450" data-img="images/burger.jpg" aria-label="Add Artisan Wagyu Smash Burger to order">
+                    <i class="bi bi-plus-lg me-1" aria-hidden="true"></i> Add to Order
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Item 2: Pizza -->
+          <div class="col-md-6 col-lg-4 menu-item-col" data-category="mains" data-name="Wood-Fired Truffle Margherita Pizza" data-id="pizza-01">
+            <article class="card menu-card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+              <div class="menu-card-img-wrapper position-relative">
+                <img src="images/pizza.jpg" alt="Wood-Fired Truffle Margherita Pizza with blistered crust, fresh basil, and buffalo mozzarella" class="card-img-top menu-img" loading="lazy" width="600" height="400">
+                <span class="category-badge position-absolute top-0 start-0 m-3 badge bg-forest text-ivory rounded-pill px-3 py-1">Wood Hearth</span>
+              </div>
+              <div class="card-body d-flex flex-column p-4">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h3 class="card-title h5 fw-bold mb-0 text-dark">Wood-Fired Truffle Pizza</h3>
+                  <span class="price-tag fw-bold text-accent h5 mb-0" aria-label="Price: 1850 Pakistani Rupees">Rs. 1,850</span>
+                </div>
+                <p class="card-text text-muted small flex-grow-1 mb-3">
+                  48-hour fermented sourdough crust baked at 800°F, San Marzano tomato pomodoro, fresh buffalo mozzarella, fragrant wild basil, and white truffle oil.
+                </p>
+                <div class="d-flex align-items-center justify-content-between pt-2 border-top border-sage">
+                  <span class="badge bg-sage text-forest"><i class="bi bi-clock-history me-1" aria-hidden="true"></i> 48h Ferment</span>
+                  <button type="button" class="btn btn-sm btn-accent add-to-order-btn" data-id="pizza-01" data-name="Wood-Fired Truffle Pizza" data-price="1850" data-img="images/pizza.jpg" aria-label="Add Wood-Fired Truffle Pizza to order">
+                    <i class="bi bi-plus-lg me-1" aria-hidden="true"></i> Add to Order
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Item 3: Pasta -->
+          <div class="col-md-6 col-lg-4 menu-item-col" data-category="mains" data-name="Wild Mushroom Fettuccine Pasta" data-id="pasta-01">
+            <article class="card menu-card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+              <div class="menu-card-img-wrapper position-relative">
+                <img src="images/pasta.jpg" alt="Wild Mushroom Fettuccine Pasta tossed in porcini cream sauce and topped with shaved aged parmesan" class="card-img-top menu-img" loading="lazy" width="600" height="400">
+                <span class="category-badge position-absolute top-0 start-0 m-3 badge bg-forest text-ivory rounded-pill px-3 py-1">Handmade Pasta</span>
+              </div>
+              <div class="card-body d-flex flex-column p-4">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h3 class="card-title h5 fw-bold mb-0 text-dark">Wild Mushroom Fettuccine</h3>
+                  <span class="price-tag fw-bold text-accent h5 mb-0" aria-label="Price: 1650 Pakistani Rupees">Rs. 1,650</span>
+                </div>
+                <p class="card-text text-muted small flex-grow-1 mb-3">
+                  Fresh egg ribbon fettuccine rolled daily, bathed in a velvety cream of pan-roasted porcini and shiitake mushrooms, garden thyme, and Parmigiano-Reggiano.
+                </p>
+                <div class="d-flex align-items-center justify-content-between pt-2 border-top border-sage">
+                  <span class="badge bg-sage text-forest"><i class="bi bi-egg me-1" aria-hidden="true"></i> Fresh Rolled</span>
+                  <button type="button" class="btn btn-sm btn-accent add-to-order-btn" data-id="pasta-01" data-name="Wild Mushroom Fettuccine" data-price="1650" data-img="images/pasta.jpg" aria-label="Add Wild Mushroom Fettuccine to order">
+                    <i class="bi bi-plus-lg me-1" aria-hidden="true"></i> Add to Order
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Item 4: Sandwich -->
+          <div class="col-md-6 col-lg-4 menu-item-col" data-category="handhelds" data-name="Smoked Sourdough Club Sandwich" data-id="sandwich-01">
+            <article class="card menu-card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+              <div class="menu-card-img-wrapper position-relative">
+                <img src="images/sandwich.jpg" alt="Smoked Sourdough Club Sandwich layered with roasted meats, avocado, crisp lettuce, and stoneground mustard" class="card-img-top menu-img" loading="lazy" width="600" height="400">
+                <span class="category-badge position-absolute top-0 start-0 m-3 badge bg-forest text-ivory rounded-pill px-3 py-1">Handheld</span>
+              </div>
+              <div class="card-body d-flex flex-column p-4">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h3 class="card-title h5 fw-bold mb-0 text-dark">Smoked Sourdough Sandwich</h3>
+                  <span class="price-tag fw-bold text-accent h5 mb-0" aria-label="Price: 1150 Pakistani Rupees">Rs. 1,150</span>
+                </div>
+                <p class="card-text text-muted small flex-grow-1 mb-3">
+                  Hickory-smoked chicken breast, shaved avocado, crisp hydroponic greens, vine tomatoes, and stone-ground herb Dijon mustard on grilled sourdough bread.
+                </p>
+                <div class="d-flex align-items-center justify-content-between pt-2 border-top border-sage">
+                  <span class="badge bg-sage text-forest"><i class="bi bi-check2-circle me-1" aria-hidden="true"></i> Artisan Loaf</span>
+                  <button type="button" class="btn btn-sm btn-accent add-to-order-btn" data-id="sandwich-01" data-name="Smoked Sourdough Sandwich" data-price="1150" data-img="images/sandwich.jpg" aria-label="Add Smoked Sourdough Sandwich to order">
+                    <i class="bi bi-plus-lg me-1" aria-hidden="true"></i> Add to Order
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Item 5: Fries -->
+          <div class="col-md-6 col-lg-4 menu-item-col" data-category="sides" data-name="Rosemary Parmesan Hand-Cut Fries" data-id="fries-01">
+            <article class="card menu-card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+              <div class="menu-card-img-wrapper position-relative">
+                <img src="images/fries.jpg" alt="Rosemary Parmesan Hand-Cut Fries served golden and crisp with flaky sea salt and aromatic herbs" class="card-img-top menu-img" loading="lazy" width="600" height="400">
+                <span class="category-badge position-absolute top-0 start-0 m-3 badge bg-forest text-ivory rounded-pill px-3 py-1">Side</span>
+              </div>
+              <div class="card-body d-flex flex-column p-4">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h3 class="card-title h5 fw-bold mb-0 text-dark">Rosemary Parmesan Fries</h3>
+                  <span class="price-tag fw-bold text-accent h5 mb-0" aria-label="Price: 650 Pakistani Rupees">Rs. 650</span>
+                </div>
+                <p class="card-text text-muted small flex-grow-1 mb-3">
+                  Russet potatoes hand-cut and double-fried in sunflower oil. Tossed with fragrant fresh rosemary, Himalayan pink salt, and shaved aged parmesan.
+                </p>
+                <div class="d-flex align-items-center justify-content-between pt-2 border-top border-sage">
+                  <span class="badge bg-sage text-forest"><i class="bi bi-snow me-1" aria-hidden="true"></i> Truffle Dip</span>
+                  <button type="button" class="btn btn-sm btn-accent add-to-order-btn" data-id="fries-01" data-name="Rosemary Parmesan Fries" data-price="650" data-img="images/fries.jpg" aria-label="Add Rosemary Parmesan Fries to order">
+                    <i class="bi bi-plus-lg me-1" aria-hidden="true"></i> Add to Order
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Item 6: Drink -->
+          <div class="col-md-6 col-lg-4 menu-item-col" data-category="sides" data-name="Botanical Citrus Saffron Cooler" data-id="drink-01">
+            <article class="card menu-card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+              <div class="menu-card-img-wrapper position-relative">
+                <img src="images/drink.jpg" alt="Botanical Citrus Saffron Cooler in a chilled glass garnished with sliced blood orange and fresh mint leaves" class="card-img-top menu-img" loading="lazy" width="600" height="400">
+                <span class="category-badge position-absolute top-0 start-0 m-3 badge bg-forest text-ivory rounded-pill px-3 py-1">Beverage</span>
+              </div>
+              <div class="card-body d-flex flex-column p-4">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h3 class="card-title h5 fw-bold mb-0 text-dark">Botanical Saffron Cooler</h3>
+                  <span class="price-tag fw-bold text-accent h5 mb-0" aria-label="Price: 450 Pakistani Rupees">Rs. 450</span>
+                </div>
+                <p class="card-text text-muted small flex-grow-1 mb-3">
+                  Handcrafted sparkling beverage infused with cold-pressed blood orange, organic mint leaves, wild cardamom, and golden saffron cordial.
+                </p>
+                <div class="d-flex align-items-center justify-content-between pt-2 border-top border-sage">
+                  <span class="badge bg-sage text-forest"><i class="bi bi-cup-straw me-1" aria-hidden="true"></i> Chilled Artisanal</span>
+                  <button type="button" class="btn btn-sm btn-accent add-to-order-btn" data-id="drink-01" data-name="Botanical Saffron Cooler" data-price="450" data-img="images/drink.jpg" aria-label="Add Botanical Saffron Cooler to order">
+                    <i class="bi bi-plus-lg me-1" aria-hidden="true"></i> Add to Order
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+        </div>
+
+        <!-- No Results Fallback (hidden by default) -->
+        <div id="no-menu-results" class="text-center py-5 d-none">
+          <i class="bi bi-search fs-1 text-muted d-block mb-3" aria-hidden="true"></i>
+          <h3 class="h4 fw-bold">No dishes found matching your search</h3>
+          <p class="text-muted">Try typing a different keyword or reset category filters.</p>
+          <button type="button" class="btn btn-outline-forest" id="reset-search-btn">Show All Dishes</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         D. ABOUT US SECTION
+         ========================================================================= -->
+    <section class="about-section py-5 py-lg-6" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="row align-items-center g-4 g-lg-5">
+          <!-- Image Column with Artisanal Kitchen Visual -->
+          <div class="col-lg-6 order-2 order-lg-1">
+            <div class="about-image-wrapper position-relative">
+              <div class="about-img-box rounded-4 overflow-hidden shadow-lg">
+                <img src="images/about.jpg" alt="Artisan chef carefully preparing food in the open kitchen of Saffron and Stone Kitchen" class="img-fluid w-100 about-img" loading="lazy" width="800" height="533">
+              </div>
+              <div class="experience-card bg-forest text-ivory p-4 rounded-4 shadow-lg position-absolute bottom-0 end-0 m-3 d-none d-sm-block">
+                <span class="display-5 fw-bold text-accent d-block font-serif">12+</span>
+                <span class="small text-sage">Years of Culinary Craft &amp; Hearth Cooking</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content Column -->
+          <div class="col-lg-6 order-1 order-lg-2">
+            <div class="about-content ps-lg-4">
+              <span class="badge bg-sage text-forest px-3 py-1 rounded-pill fw-semibold mb-2 text-uppercase">Our Story &amp; Philosophy</span>
+              <h2 class="section-title display-5 fw-bold mb-4" id="about-heading">Rooted in Tradition, Elevated by Passion.</h2>
+              <p class="lead text-dark mb-3">
+                Founded with a reverence for ancestral culinary techniques, Saffron &amp; Stone Kitchen bridges the warmth of age-old hearth cooking with contemporary gourmet refinement.
+              </p>
+              <p class="text-muted mb-4">
+                Our kitchen eliminates microwave shortcuts and commercial bases. Instead, every sauce is reduced over gentle embers, doughs undergo slow cold fermentation, and our signature spices are freshly cracked in granite mortars. We believe dining should be an honest sensory ritual.
+              </p>
+
+              <!-- Philosophy List -->
+              <div class="row g-3 mb-4">
+                <div class="col-sm-6">
+                  <div class="d-flex align-items-start gap-2">
+                    <i class="bi bi-patch-check-fill text-accent fs-5 mt-1" aria-hidden="true"></i>
+                    <div>
+                      <strong class="d-block text-dark">Zero Preservatives</strong>
+                      <small class="text-muted">Only whole food and organic cold-pressed oils.</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="d-flex align-items-start gap-2">
+                    <i class="bi bi-patch-check-fill text-accent fs-5 mt-1" aria-hidden="true"></i>
+                    <div>
+                      <strong class="d-block text-dark">Eco-Friendly Packaging</strong>
+                      <small class="text-muted">100% biodegradable insulated containers.</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="d-flex align-items-start gap-2">
+                    <i class="bi bi-patch-check-fill text-accent fs-5 mt-1" aria-hidden="true"></i>
+                    <div>
+                      <strong class="d-block text-dark">48-Hour Fermentation</strong>
+                      <small class="text-muted">Airy, digestible sourdough crusts.</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="d-flex align-items-start gap-2">
+                    <i class="bi bi-patch-check-fill text-accent fs-5 mt-1" aria-hidden="true"></i>
+                    <div>
+                      <strong class="d-block text-dark">Temperature Controlled</strong>
+                      <small class="text-muted">Guaranteed piping hot upon arrival.</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center gap-3">
+                <a href="#order" class="btn btn-forest px-4 py-2 fw-semibold">
+                  Taste the Difference <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         E. SPECIAL OFFERS SECTION (At least 2 promotional offers)
+         ========================================================================= -->
+    <section class="offers-section py-5 py-lg-6 bg-surface" id="offers" aria-labelledby="offers-heading">
+      <div class="container">
+        <div class="text-center max-w-700 mx-auto mb-5">
+          <span class="badge bg-orange text-white px-3 py-1 rounded-pill fw-semibold mb-2 text-uppercase">Limited Time Value</span>
+          <h2 class="section-title display-5 fw-bold mb-3" id="offers-heading">Curated Chef Bundles</h2>
+          <p class="text-muted">
+            Share the hearth experience with our specially bundled combos. Each package is discounted for an exceptional culinary tasting at a reduced price.
+          </p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          
+          <!-- Offer 1: The Saffron Feast Bundle -->
+          <div class="col-lg-6">
+            <article class="card offer-card h-100 border-0 rounded-4 overflow-hidden shadow-sm position-relative">
+              <div class="card-header bg-forest text-ivory p-4 d-flex justify-content-between align-items-center">
+                <div>
+                  <span class="badge bg-orange text-white rounded-pill px-3 py-1 mb-1">Save Rs. 550</span>
+                  <h3 class="h4 fw-bold mb-0 text-white font-serif">The Saffron Feast Bundle</h3>
+                </div>
+                <div class="text-end">
+                  <div class="text-decoration-line-through text-sage small">Regular Rs. 4,400</div>
+                  <div class="h4 text-accent fw-bold mb-0">Rs. 3,850</div>
+                </div>
+              </div>
+              <div class="card-body p-4 d-flex flex-column justify-content-between">
+                <div>
+                  <p class="text-muted mb-3">
+                    A multi-course gourmet experience ideal for couples or families. Combines our most celebrated wood-fired and hearth specialties.
+                  </p>
+                  <ul class="list-unstyled offer-includes-list mb-4">
+                    <li class="d-flex align-items-center gap-2 mb-2">
+                      <i class="bi bi-check-circle-fill text-accent" aria-hidden="true"></i>
+                      <span>1x Wood-Fired Truffle Margherita Pizza (Rs. 1,850)</span>
+                    </li>
+                    <li class="d-flex align-items-center gap-2 mb-2">
+                      <i class="bi bi-check-circle-fill text-accent" aria-hidden="true"></i>
+                      <span>1x Artisan Wagyu Smash Burger (Rs. 1,450)</span>
+                    </li>
+                    <li class="d-flex align-items-center gap-2 mb-2">
+                      <i class="bi bi-check-circle-fill text-accent" aria-hidden="true"></i>
+                      <span>1x Rosemary Parmesan Hand-Cut Fries (Rs. 650)</span>
+                    </li>
+                    <li class="d-flex align-items-center gap-2">
+                      <i class="bi bi-check-circle-fill text-accent" aria-hidden="true"></i>
+                      <span>1x Botanical Citrus Saffron Cooler (Rs. 450)</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="pt-3 border-top border-sage d-flex align-items-center justify-content-between">
+                  <span class="text-muted small"><i class="bi bi-people me-1" aria-hidden="true"></i> Serves 2–3 Persons</span>
+                  <button type="button" class="btn btn-accent fw-semibold add-bundle-btn" data-bundle="feast" aria-label="Add The Saffron Feast Bundle to order">
+                    <i class="bi bi-bag-plus me-1" aria-hidden="true"></i> Claim Bundle (Rs. 3,850)
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Offer 2: Artisan Lunch Express -->
+          <div class="col-lg-6">
+            <article class="card offer-card h-100 border-0 rounded-4 overflow-hidden shadow-sm position-relative">
+              <div class="card-header bg-forest text-ivory p-4 d-flex justify-content-between align-items-center">
+                <div>
+                  <span class="badge bg-orange text-white rounded-pill px-3 py-1 mb-1">Save Rs. 600</span>
+                  <h3 class="h4 fw-bold mb-0 text-white font-serif">Artisan Lunch Express</h3>
+                </div>
+                <div class="text-end">
+                  <div class="text-decoration-line-through text-sage small">Regular Rs. 2,250</div>
+                  <div class="h4 text-accent fw-bold mb-0">Rs. 1,650</div>
+                </div>
+              </div>
+              <div class="card-body p-4 d-flex flex-column justify-content-between">
+                <div>
+                  <p class="text-muted mb-3">
+                    The ultimate midday indulgence. Crisp grilled sourdough sandwich accompanied by freshly seasoned fries and a handcrafted botanical refresher.
+                  </p>
+                  <ul class="list-unstyled offer-includes-list mb-4">
+                    <li class="d-flex align-items-center gap-2 mb-2">
+                      <i class="bi bi-check-circle-fill text-accent" aria-hidden="true"></i>
+                      <span>1x Smoked Sourdough Club Sandwich (Rs. 1,150)</span>
+                    </li>
+                    <li class="d-flex align-items-center gap-2 mb-2">
+                      <i class="bi bi-check-circle-fill text-accent" aria-hidden="true"></i>
+                      <span>1x Rosemary Parmesan Hand-Cut Fries (Rs. 650)</span>
+                    </li>
+                    <li class="d-flex align-items-center gap-2">
+                      <i class="bi bi-check-circle-fill text-accent" aria-hidden="true"></i>
+                      <span>1x Botanical Citrus Saffron Cooler (Rs. 450)</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="pt-3 border-top border-sage d-flex align-items-center justify-content-between">
+                  <span class="text-muted small"><i class="bi bi-person me-1" aria-hidden="true"></i> Serves 1 Person</span>
+                  <button type="button" class="btn btn-accent fw-semibold add-bundle-btn" data-bundle="lunch" aria-label="Add Artisan Lunch Express to order">
+                    <i class="bi bi-bag-plus me-1" aria-hidden="true"></i> Claim Bundle (Rs. 1,650)
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         F. CUSTOMER TESTIMONIALS SECTION (At least 3 illustrative entries)
+         ========================================================================= -->
+    <section class="testimonials-section py-5 py-lg-6" id="testimonials" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <div class="text-center max-w-700 mx-auto mb-5">
+          <span class="badge bg-sage text-forest px-3 py-1 rounded-pill fw-semibold mb-2 text-uppercase">Guest Impressions</span>
+          <h2 class="section-title display-5 fw-bold mb-3" id="testimonials-heading">Words From Our Patrons</h2>
+          <p class="text-muted">
+            Read what food critics and loyal diners say about our wood-fired hearth and seamless ordering experience.
+          </p>
+          <div class="small text-muted fst-italic">
+            <i class="bi bi-info-circle me-1" aria-hidden="true"></i> Illustrative sample testimonials for academic project demonstration.
+          </div>
+        </div>
+
+        <div class="row g-4">
+          
+          <!-- Review 1 -->
+          <div class="col-md-4">
+            <article class="card testimonial-card h-100 p-4 border-0 rounded-4 shadow-sm">
+              <div class="rating-stars mb-3 text-warning" aria-label="Rating: 5 out of 5 stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <blockquote class="blockquote card-text flex-grow-1 text-dark mb-4">
+                <p>“The Smoked Wagyu Smash Burger is unmatched. The brioche is cloud-soft, and that house saffron aioli makes every single bite a masterclass in balance.”</p>
+              </blockquote>
+              <div class="d-flex align-items-center gap-3 pt-3 border-top border-sage">
+                <div class="avatar-placeholder rounded-circle bg-forest text-ivory fw-bold d-flex align-items-center justify-content-center">
+                  AK
+                </div>
+                <div>
+                  <h3 class="h6 fw-bold mb-0 text-dark">Ayla Khan</h3>
+                  <small class="text-muted">Culinary Columnist &amp; Food Critic</small>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="col-md-4">
+            <article class="card testimonial-card h-100 p-4 border-0 rounded-4 shadow-sm">
+              <div class="rating-stars mb-3 text-warning" aria-label="Rating: 5 out of 5 stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <blockquote class="blockquote card-text flex-grow-1 text-dark mb-4">
+                <p>“Wood-fired Truffle Mushroom Pizza with that blistered sourdough crust is pure poetry. Arrived piping hot within 35 minutes of ordering online!”</p>
+              </blockquote>
+              <div class="d-flex align-items-center gap-3 pt-3 border-top border-sage">
+                <div class="avatar-placeholder rounded-circle bg-orange text-white fw-bold d-flex align-items-center justify-content-center">
+                  DM
+                </div>
+                <div>
+                  <h3 class="h6 fw-bold mb-0 text-dark">Daniyal Mir</h3>
+                  <small class="text-muted">Verified Weekend Patron</small>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="col-md-4">
+            <article class="card testimonial-card h-100 p-4 border-0 rounded-4 shadow-sm">
+              <div class="rating-stars mb-3 text-warning" aria-label="Rating: 5 out of 5 stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <blockquote class="blockquote card-text flex-grow-1 text-dark mb-4">
+                <p>“Their attention to eco-friendly insulated packaging, fresh herbs, and the ease of customizing orders makes Saffron &amp; Stone our top family pick.”</p>
+              </blockquote>
+              <div class="d-flex align-items-center gap-3 pt-3 border-top border-sage">
+                <div class="avatar-placeholder rounded-circle bg-forest text-ivory fw-bold d-flex align-items-center justify-content-center">
+                  SA
+                </div>
+                <div>
+                  <h3 class="h6 fw-bold mb-0 text-dark">Dr. Sarah Ahmed</h3>
+                  <small class="text-muted">Regular Diner &amp; Host</small>
+                </div>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         G. ORDER FORM AND SHOPPING EXPERIENCE
+         ========================================================================= -->
+    <section class="order-section py-5 py-lg-6 bg-surface" id="order" aria-labelledby="order-heading">
+      <div class="container">
+        <!-- Section Heading -->
+        <div class="text-center max-w-700 mx-auto mb-5">
+          <span class="badge bg-forest text-ivory px-3 py-1 rounded-pill fw-semibold mb-2 text-uppercase">Online Checkout</span>
+          <h2 class="section-title display-5 fw-bold mb-3" id="order-heading">Place Your Food Order</h2>
+          <p class="text-muted">
+            Add items from the menu above or use the quick food selector below. Review your cart subtotals and submit your demonstration order.
+          </p>
+        </div>
+
+        <div class="row g-4 g-xl-5">
+          
+          <!-- Column 1: Customer Details & Item Picker Form -->
+          <div class="col-lg-7">
+            <div class="card order-form-card border-0 rounded-4 shadow-sm p-4 p-md-5">
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <h3 class="h4 fw-bold mb-0 text-forest font-serif">Customer &amp; Delivery Details</h3>
+                <span class="text-muted small"><span class="text-danger">*</span> Required fields</span>
+              </div>
+
+              <!-- Quick Food Dropdown Adder (Integrated directly into form) -->
+              <div class="p-3 bg-sage-light rounded-3 mb-4 border border-sage">
+                <label for="quick-item-select" class="form-label fw-bold text-forest mb-2">
+                  <i class="bi bi-plus-circle me-1 text-accent" aria-hidden="true"></i> Quick Food Item Adder
+                </label>
+                <div class="row g-2">
+                  <div class="col-sm-7">
+                    <select id="quick-item-select" class="form-select" aria-label="Select food item to add">
+                      <option value="burger-01" data-name="Artisan Wagyu Smash Burger" data-price="1450" data-img="images/burger.jpg">Artisan Wagyu Smash Burger (Rs. 1,450)</option>
+                      <option value="pizza-01" data-name="Wood-Fired Truffle Pizza" data-price="1850" data-img="images/pizza.jpg">Wood-Fired Truffle Pizza (Rs. 1,850)</option>
+                      <option value="pasta-01" data-name="Wild Mushroom Fettuccine" data-price="1650" data-img="images/pasta.jpg">Wild Mushroom Fettuccine (Rs. 1,650)</option>
+                      <option value="sandwich-01" data-name="Smoked Sourdough Sandwich" data-price="1150" data-img="images/sandwich.jpg">Smoked Sourdough Sandwich (Rs. 1,150)</option>
+                      <option value="fries-01" data-name="Rosemary Parmesan Fries" data-price="650" data-img="images/fries.jpg">Rosemary Parmesan Fries (Rs. 650)</option>
+                      <option value="drink-01" data-name="Botanical Saffron Cooler" data-price="450" data-img="images/drink.jpg">Botanical Saffron Cooler (Rs. 450)</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-2 col-4">
+                    <input type="number" id="quick-item-qty" class="form-control text-center" value="1" min="1" max="20" aria-label="Quantity">
+                  </div>
+                  <div class="col-sm-3 col-8">
+                    <button type="button" id="quick-add-btn" class="btn btn-accent w-100 fw-semibold">
+                      <i class="bi bi-cart-plus me-1" aria-hidden="true"></i> Add
+                    </button>
+                  </div>
+                </div>
+                <small class="text-muted d-block mt-2">Or click "Add to Order" on any menu card or combo offer above.</small>
+              </div>
+
+              <!-- Main Order Form -->
+              <form id="food-order-form" novalidate>
+                <div class="row g-3">
+                  <!-- Full Name -->
+                  <div class="col-md-6">
+                    <label for="order-name" class="form-label fw-semibold">Full Name <span class="text-danger">*</span></label>
+                    <div class="input-group has-validation">
+                      <span class="input-group-text"><i class="bi bi-person text-muted" aria-hidden="true"></i></span>
+                      <input type="text" class="form-control" id="order-name" name="customerName" placeholder="e.g. M Zain Ul Abideen" required minlength="3">
+                      <div class="invalid-feedback">Please provide your full name (at least 3 characters).</div>
+                    </div>
+                  </div>
+
+                  <!-- Email Address -->
+                  <div class="col-md-6">
+                    <label for="order-email" class="form-label fw-semibold">Email Address <span class="text-danger">*</span></label>
+                    <div class="input-group has-validation">
+                      <span class="input-group-text"><i class="bi bi-envelope text-muted" aria-hidden="true"></i></span>
+                      <input type="email" class="form-control" id="order-email" name="customerEmail" placeholder="e.g. zain@example.com" required>
+                      <div class="invalid-feedback">Please provide a valid email address (e.g. name@domain.com).</div>
+                    </div>
+                  </div>
+
+                  <!-- Phone Number -->
+                  <div class="col-md-6">
+                    <label for="order-phone" class="form-label fw-semibold">Phone Number <span class="text-danger">*</span></label>
+                    <div class="input-group has-validation">
+                      <span class="input-group-text"><i class="bi bi-telephone text-muted" aria-hidden="true"></i></span>
+                      <input type="tel" class="form-control" id="order-phone" name="customerPhone" placeholder="e.g. 0300-1234567" required pattern="^(\+92|0)[0-9]{2,3}-?[0-9]{7}$">
+                      <div class="invalid-feedback">Please enter a valid phone number (e.g. 0300-1234567).</div>
+                    </div>
+                  </div>
+
+                  <!-- Order Type (Delivery vs Pickup) -->
+                  <div class="col-md-6">
+                    <label class="form-label fw-semibold d-block">Order Service Type <span class="text-danger">*</span></label>
+                    <div class="d-flex gap-4 pt-1">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="orderServiceType" id="service-delivery" value="delivery" checked>
+                        <label class="form-check-label" for="service-delivery">
+                          <i class="bi bi-bicycle me-1 text-accent" aria-hidden="true"></i> Express Delivery
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="orderServiceType" id="service-pickup" value="pickup">
+                        <label class="form-check-label" for="service-pickup">
+                          <i class="bi bi-shop me-1 text-forest" aria-hidden="true"></i> Self Pickup
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Delivery Address (Required if delivery) -->
+                  <div class="col-12" id="delivery-address-container">
+                    <label for="order-address" class="form-label fw-semibold">Delivery Address <span class="text-danger">*</span></label>
+                    <div class="input-group has-validation">
+                      <span class="input-group-text"><i class="bi bi-geo-alt text-muted" aria-hidden="true"></i></span>
+                      <input type="text" class="form-control" id="order-address" name="customerAddress" placeholder="Street, House/Flat No, Sector / Area" required>
+                      <div class="invalid-feedback">Delivery address is required for express delivery.</div>
+                    </div>
+                  </div>
+
+                  <!-- Special Instructions -->
+                  <div class="col-12">
+                    <label for="order-notes" class="form-label fw-semibold">Special Dietary Instructions <small class="text-muted fw-normal">(Optional)</small></label>
+                    <textarea class="form-control" id="order-notes" name="specialNotes" rows="2" placeholder="e.g., Dressing on the side, extra spicy, contactless delivery..."></textarea>
+                  </div>
+                </div>
+
+                <!-- Form Action Buttons -->
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mt-4 pt-3 border-top border-sage">
+                  <button type="button" id="clear-order-btn" class="btn btn-outline-danger">
+                    <i class="bi bi-trash3 me-1" aria-hidden="true"></i> Clear / Reset Order
+                  </button>
+                  <button type="submit" id="submit-order-btn" class="btn btn-accent btn-lg px-4 py-2 fw-bold shadow-sm">
+                    <i class="bi bi-check2-circle me-1" aria-hidden="true"></i> Confirm &amp; Submit Order
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Column 2: Live Shopping Cart & Order Summary -->
+          <div class="col-lg-5">
+            <aside class="card cart-summary-card border-0 rounded-4 shadow-sm p-4 sticky-top-card" aria-label="Order Cart Summary">
+              <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom border-sage">
+                <h3 class="h5 fw-bold mb-0 text-forest font-serif">
+                  <i class="bi bi-bag-check me-2 text-accent" aria-hidden="true"></i> Your Order Summary
+                </h3>
+                <span id="cart-item-count-text" class="badge bg-forest text-ivory rounded-pill">0 items</span>
+              </div>
+
+              <!-- Cart Items List Container -->
+              <div id="cart-items-container" class="cart-items-list mb-3" aria-live="polite">
+                <!-- Empty state shown by default -->
+                <div id="cart-empty-state" class="text-center py-5">
+                  <div class="empty-cart-icon mb-3 text-muted">
+                    <i class="bi bi-basket3 display-4"></i>
+                  </div>
+                  <h4 class="h6 fw-bold text-dark">Your food basket is empty</h4>
+                  <p class="text-muted small mb-3">Add mouth-watering items from the menu above to begin your order.</p>
+                  <a href="#menu" class="btn btn-sm btn-outline-forest">Browse Menu</a>
+                </div>
+
+                <!-- Populated items will be dynamically rendered here via safe DOM methods -->
+                <div id="cart-active-list" class="d-none"></div>
+              </div>
+
+              <!-- Pricing Calculation Breakdown -->
+              <div class="pricing-breakdown pt-3 border-top border-sage">
+                <div class="d-flex justify-content-between text-muted mb-2">
+                  <span>Subtotal:</span>
+                  <span id="calc-subtotal" class="fw-semibold text-dark">Rs. 0</span>
+                </div>
+                <div class="d-flex justify-content-between text-muted mb-2">
+                  <span id="calc-delivery-label">Delivery Fee:</span>
+                  <span id="calc-delivery-fee" class="fw-semibold text-dark">Rs. 0</span>
+                </div>
+                <div id="calc-discount-row" class="d-flex justify-content-between text-success mb-2 d-none">
+                  <span id="calc-discount-label">Bundle Discount:</span>
+                  <span id="calc-discount-amount" class="fw-semibold">-Rs. 0</span>
+                </div>
+                <hr class="my-2 border-sage">
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="h5 fw-bold mb-0 text-forest">Grand Total:</span>
+                  <span id="calc-grand-total" class="h4 fw-bold mb-0 text-accent" aria-live="polite">Rs. 0</span>
+                </div>
+              </div>
+
+              <!-- Free Delivery Progress Indicator -->
+              <div class="mt-3 p-3 bg-sage-light rounded-3 small" id="delivery-perk-box">
+                <div class="d-flex align-items-center gap-2 mb-1">
+                  <i class="bi bi-lightning-charge-fill text-accent" aria-hidden="true"></i>
+                  <span id="delivery-perk-text">Free express delivery on orders over <strong>Rs. 3,000</strong>!</span>
+                </div>
+                <div class="progress" style="height: 6px;" role="progressbar" aria-label="Free delivery progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                  <div id="delivery-progress-bar" class="progress-bar bg-accent" style="width: 0%"></div>
+                </div>
+              </div>
+
+              <!-- Academic Demonstration Notice -->
+              <div class="alert alert-light border border-sage small text-muted mt-3 mb-0" role="status">
+                <i class="bi bi-info-circle text-accent me-1" aria-hidden="true"></i>
+                <strong>Notice:</strong> This is a frontend academic simulation. No real payment is charged and prices are strictly calculated in-browser.
+              </div>
+            </aside>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         I. CONTACT SECTION (Address, Phone, Email, & Contact Form)
+         ========================================================================= -->
+    <section class="contact-section py-5 py-lg-6" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="text-center max-w-700 mx-auto mb-5">
+          <span class="badge bg-sage text-forest px-3 py-1 rounded-pill fw-semibold mb-2 text-uppercase">Get in Touch</span>
+          <h2 class="section-title display-5 fw-bold mb-3" id="contact-heading">Visit Us or Inquire</h2>
+          <p class="text-muted">
+            Have a catering inquiry, private table booking, or dietary question? Our hearth team is at your service.
+          </p>
+        </div>
+
+        <div class="row g-4 g-lg-5">
+          <!-- Contact Info Details -->
+          <div class="col-lg-5">
+            <div class="contact-info-card bg-forest text-ivory p-4 p-md-5 rounded-4 h-100 shadow-sm d-flex flex-column justify-content-between">
+              <div>
+                <h3 class="h4 fw-bold mb-4 font-serif text-white">Saffron &amp; Stone Kitchen</h3>
+                
+                <div class="d-flex align-items-start gap-3 mb-4">
+                  <div class="contact-icon-box bg-sage text-forest p-2 rounded-circle">
+                    <i class="bi bi-geo-alt fs-5" aria-hidden="true"></i>
+                  </div>
+                  <div>
+                    <strong class="d-block text-white">Restaurant Location:</strong>
+                    <span class="text-sage small">14-A Heritage Boulevard, F-7 Markaz, Islamabad, Pakistan (Sample Address)</span>
+                  </div>
+                </div>
+
+                <div class="d-flex align-items-start gap-3 mb-4">
+                  <div class="contact-icon-box bg-sage text-forest p-2 rounded-circle">
+                    <i class="bi bi-telephone fs-5" aria-hidden="true"></i>
+                  </div>
+                  <div>
+                    <strong class="d-block text-white">Telephone &amp; WhatsApp:</strong>
+                    <span class="text-sage small">+92 (51) 844-7233 / +92 (300) 123-4567</span>
+                  </div>
+                </div>
+
+                <div class="d-flex align-items-start gap-3 mb-4">
+                  <div class="contact-icon-box bg-sage text-forest p-2 rounded-circle">
+                    <i class="bi bi-envelope fs-5" aria-hidden="true"></i>
+                  </div>
+                  <div>
+                    <strong class="d-block text-white">Email Address:</strong>
+                    <span class="text-sage small">contact@saffronandstone.demo</span>
+                  </div>
+                </div>
+
+                <div class="d-flex align-items-start gap-3">
+                  <div class="contact-icon-box bg-sage text-forest p-2 rounded-circle">
+                    <i class="bi bi-clock fs-5" aria-hidden="true"></i>
+                  </div>
+                  <div>
+                    <strong class="d-block text-white">Operating Kitchen Hours:</strong>
+                    <span class="text-sage small d-block">Monday – Thursday: 12:00 PM – 11:00 PM</span>
+                    <span class="text-sage small d-block">Friday – Sunday: 12:00 PM – 11:30 PM</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pt-4 mt-4 border-top border-secondary text-sage small">
+                <i class="bi bi-info-circle me-1" aria-hidden="true"></i>
+                All contact details are sample placeholders for this university assignment demonstration.
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Inquiries Form -->
+          <div class="col-lg-7">
+            <div class="card contact-form-card border-0 rounded-4 shadow-sm p-4 p-md-5 h-100">
+              <h3 class="h4 fw-bold mb-3 text-forest font-serif">Send Us a Message</h3>
+              <p class="text-muted small mb-4">Fill out the validated form below to send an inquiry or message to our management.</p>
+
+              <!-- Success Alert Message (Shown after valid submission) -->
+              <div id="contact-success-alert" class="alert alert-success d-none d-flex align-items-start gap-2" role="alert">
+                <i class="bi bi-check-circle-fill fs-5 mt-1" aria-hidden="true"></i>
+                <div>
+                  <strong>Inquiry Received!</strong>
+                  <p class="mb-0 small" id="contact-success-text">Thank you for your message. Note: As this is a frontend academic demonstration, no actual email is transmitted to a mail server.</p>
+                </div>
+              </div>
+
+              <form id="contact-form" novalidate>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="contact-name" class="form-label fw-semibold">Your Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="contact-name" name="contactName" placeholder="e.g. Ayla Khan" required minlength="2">
+                    <div class="invalid-feedback">Please enter your name.</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="contact-email" class="form-label fw-semibold">Your Email <span class="text-danger">*</span></label>
+                    <input type="email" class="form-control" id="contact-email" name="contactEmail" placeholder="e.g. ayla@example.com" required>
+                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="contact-subject" class="form-label fw-semibold">Subject <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="contact-subject" name="contactSubject" placeholder="e.g. Table reservation / Dietary question" required minlength="3">
+                    <div class="invalid-feedback">Please specify the subject of your message.</div>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="contact-message" class="form-label fw-semibold">Message <span class="text-danger">*</span></label>
+                    <textarea class="form-control" id="contact-message" name="contactMessage" rows="4" placeholder="How can our culinary team assist you?" required minlength="10"></textarea>
+                    <div class="invalid-feedback">Please provide your message (at least 10 characters).</div>
+                  </div>
+
+                  <div class="col-12 mt-4">
+                    <button type="submit" class="btn btn-accent px-4 py-2 fw-semibold">
+                      <i class="bi bi-send me-1" aria-hidden="true"></i> Send Message (Demo)
+                    </button>
+                    <button type="reset" class="btn btn-outline-secondary ms-2 px-3 py-2">
+                      Reset
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       H. ORDER CONFIRMATION MODAL (Bootstrap 5 Modal)
+       ========================================================================= -->
+  <div class="modal fade" id="orderConfirmationModal" tabindex="-1" aria-labelledby="orderConfirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 rounded-4 shadow-lg overflow-hidden">
+        
+        <div class="modal-header bg-forest text-ivory p-4">
+          <div class="d-flex align-items-center gap-3">
+            <div class="modal-icon-circle bg-accent text-white p-2 rounded-circle">
+              <i class="bi bi-check2-circle fs-4" aria-hidden="true"></i>
+            </div>
+            <div>
+              <h2 class="modal-title h5 fw-bold mb-0 text-white font-serif" id="orderConfirmationModalLabel">Order Confirmed Successfully!</h2>
+              <span class="small text-sage">Demonstration Simulation Receipt</span>
+            </div>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close modal"></button>
+        </div>
+
+        <div class="modal-body p-4 p-md-5">
+          <!-- Academic Disclaimer Banner -->
+          <div class="alert alert-warning d-flex align-items-center gap-2 mb-4" role="alert">
+            <i class="bi bi-exclamation-triangle-fill fs-5" aria-hidden="true"></i>
+            <div class="small">
+              <strong>University Demonstration Notice:</strong> This order is an academic frontend demonstration. No financial charges were processed, and no order was sent to a live kitchen backend.
+            </div>
+          </div>
+
+          <!-- Order Reference Header -->
+          <div class="bg-sage-light p-3 rounded-3 mb-4 d-flex flex-wrap justify-content-between align-items-center gap-2">
+            <div>
+              <span class="text-muted small d-block">Order Reference:</span>
+              <strong id="modal-order-ref" class="text-forest h5 mb-0">#SFS-2026-0000</strong>
+            </div>
+            <div>
+              <span class="text-muted small d-block">Timestamp:</span>
+              <span id="modal-order-time" class="text-dark fw-semibold small">--</span>
+            </div>
+            <div>
+              <span class="text-muted small d-block">Estimated Prep &amp; Handover:</span>
+              <span class="badge bg-forest text-ivory">35 – 45 Minutes</span>
+            </div>
+          </div>
+
+          <!-- Customer Info Summary -->
+          <div class="row g-3 mb-4">
+            <div class="col-sm-6">
+              <h3 class="h6 fw-bold text-forest mb-2">Customer Information</h3>
+              <p class="small mb-1"><strong class="text-dark">Name:</strong> <span id="modal-cust-name">--</span></p>
+              <p class="small mb-1"><strong class="text-dark">Email:</strong> <span id="modal-cust-email">--</span></p>
+              <p class="small mb-0"><strong class="text-dark">Phone:</strong> <span id="modal-cust-phone">--</span></p>
+            </div>
+            <div class="col-sm-6">
+              <h3 class="h6 fw-bold text-forest mb-2">Fulfillment Details</h3>
+              <p class="small mb-1"><strong class="text-dark">Service Type:</strong> <span id="modal-order-service" class="badge bg-sage text-forest">--</span></p>
+              <p class="small mb-1"><strong class="text-dark">Address:</strong> <span id="modal-cust-address">--</span></p>
+              <p class="small mb-0"><strong class="text-dark">Notes:</strong> <span id="modal-cust-notes" class="text-muted">None</span></p>
+            </div>
+          </div>
+
+          <!-- Purchased Items Breakdown Table -->
+          <h3 class="h6 fw-bold text-forest mb-2">Itemized Summary</h3>
+          <div class="table-responsive mb-3">
+            <table class="table table-sm align-middle" aria-label="Itemized order summary table">
+              <thead class="table-light">
+                <tr>
+                  <th scope="col">Dish Name</th>
+                  <th scope="col" class="text-center">Qty</th>
+                  <th scope="col" class="text-end">Unit Price</th>
+                  <th scope="col" class="text-end">Subtotal</th>
+                </tr>
+              </thead>
+              <tbody id="modal-items-tbody">
+                <!-- Dynamically populated -->
+              </tbody>
+              <tfoot class="border-top">
+                <tr>
+                  <td colspan="3" class="text-end text-muted small">Items Subtotal:</td>
+                  <td class="text-end fw-semibold small" id="modal-subtotal">Rs. 0</td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="text-end text-muted small">Delivery Charges:</td>
+                  <td class="text-end fw-semibold small" id="modal-delivery">Rs. 0</td>
+                </tr>
+                <tr id="modal-discount-row" class="d-none text-success">
+                  <td colspan="3" class="text-end small">Promotional Discount:</td>
+                  <td class="text-end fw-semibold small" id="modal-discount">-Rs. 0</td>
+                </tr>
+                <tr class="table-light">
+                  <th colspan="3" class="text-end h6 fw-bold text-forest mb-0">Total Amount (PKR):</th>
+                  <th class="text-end h5 fw-bold text-accent mb-0" id="modal-total">Rs. 0</th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+
+        <div class="modal-footer bg-light p-3 d-flex justify-content-between">
+          <button type="button" class="btn btn-outline-secondary" onclick="window.print()">
+            <i class="bi bi-printer me-1" aria-hidden="true"></i> Print Receipt
+          </button>
+          <div class="d-flex gap-2">
+            <button type="button" class="btn btn-forest" data-bs-dismiss="modal">Close &amp; Finish</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       J. FOOTER
+       ========================================================================= -->
+  <footer class="footer bg-forest-dark text-ivory py-5" id="site-footer">
+    <div class="container">
+      <div class="row g-4 g-lg-5 mb-5">
+        
+        <!-- Brand & Description Column -->
+        <div class="col-lg-4">
+          <div class="footer-brand mb-3 d-flex align-items-center gap-2">
+            <span class="brand-symbol text-accent" aria-hidden="true"><i class="bi bi-fire"></i></span>
+            <div class="brand-text">
+              <span class="brand-title text-white">Saffron &amp; Stone</span>
+              <span class="brand-subtitle text-sage">Artisanal Kitchen &amp; Hearth</span>
+            </div>
+          </div>
+          <p class="text-sage small mb-4">
+            Celebrating heritage hearth traditions and contemporary gastronomy. Handcrafted sourdoughs, open-flame grills, and fragrant saffron delicacies made fresh daily.
+          </p>
+          <!-- Social Media Icons (safe anchor links with clear labels) -->
+          <div class="footer-socials d-flex gap-2" aria-label="Social media channels">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Follow Saffron &amp; Stone on Instagram">
+              <i class="bi bi-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Follow Saffron &amp; Stone on Facebook">
+              <i class="bi bi-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Follow Saffron &amp; Stone on X / Twitter">
+              <i class="bi bi-twitter-x" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links Column -->
+        <div class="col-6 col-lg-2">
+          <h4 class="h6 fw-bold text-white text-uppercase letter-spacing mb-3">Explore</h4>
+          <ul class="list-unstyled footer-nav-list small">
+            <li class="mb-2"><a href="#hero" class="footer-link">Home</a></li>
+            <li class="mb-2"><a href="#menu" class="footer-link">Food Menu</a></li>
+            <li class="mb-2"><a href="#about" class="footer-link">Our Heritage</a></li>
+            <li class="mb-2"><a href="#offers" class="footer-link">Chef Bundles</a></li>
+            <li class="mb-2"><a href="#testimonials" class="footer-link">Patron Reviews</a></li>
+          </ul>
+        </div>
+
+        <!-- Food Highlights Column -->
+        <div class="col-6 col-lg-3">
+          <h4 class="h6 fw-bold text-white text-uppercase letter-spacing mb-3">Popular Dishes</h4>
+          <ul class="list-unstyled footer-nav-list small">
+            <li class="mb-2"><a href="#menu" class="footer-link">Artisan Wagyu Burger</a></li>
+            <li class="mb-2"><a href="#menu" class="footer-link">Wood-Fired Truffle Pizza</a></li>
+            <li class="mb-2"><a href="#menu" class="footer-link">Wild Mushroom Fettuccine</a></li>
+            <li class="mb-2"><a href="#menu" class="footer-link">Smoked Sourdough Sandwich</a></li>
+            <li class="mb-2"><a href="#menu" class="footer-link">Rosemary Parmesan Fries</a></li>
+          </ul>
+        </div>
+
+        <!-- Academic Assignment Info Column -->
+        <div class="col-lg-3">
+          <h4 class="h6 fw-bold text-white text-uppercase letter-spacing mb-3">Project Metadata</h4>
+          <div class="academic-badge p-3 rounded-3 bg-forest border border-sage small">
+            <p class="mb-1 text-sage"><strong>Course:</strong> Web Engineering</p>
+            <p class="mb-1 text-sage"><strong>Project:</strong> Online Food Ordering</p>
+            <p class="mb-1 text-sage"><strong>Tech:</strong> HTML5, CSS3, BS5, JS</p>
+            <p class="mb-0 text-sage"><strong>Student:</strong> M Zain Ul Abideen</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom pt-4 border-top border-secondary d-flex flex-wrap justify-content-between align-items-center gap-3 small text-sage">
+        <div>
+          &copy; 2026 <strong>Saffron &amp; Stone Kitchen</strong>. All rights reserved. Academic Demonstration.
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <a href="#page-top" class="back-to-top-link" aria-label="Back to top of page">
+            <i class="bi bi-arrow-up-circle-fill me-1" aria-hidden="true"></i> Back to Top
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 Bundle with Popper JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <!-- Application JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

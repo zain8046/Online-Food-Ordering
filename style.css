@@ -1,0 +1,824 @@
+/* ==========================================================================
+   SAFFRON & STONE KITCHEN — STYLESHEET
+   Course: Web Engineering | Project: Online Food Ordering
+   Technologies: HTML5, CSS3 Custom Properties, Bootstrap 5, Vanilla JS
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS CUSTOM PROPERTIES (DESIGN SYSTEM)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Brand Color Palette */
+  --color-ivory: #F8F5EE;
+  --color-forest: #193B2E;
+  --color-forest-dark: #11271F;
+  --color-forest-light: #245241;
+  --color-orange: #D96B3B;
+  --color-orange-hover: #BF5729;
+  --color-sage: #DCE5D8;
+  --color-sage-light: #EEF3EC;
+  --color-dark: #252923;
+  --color-muted: #6D7169;
+  --color-white: #FFFFFF;
+  --color-border: rgba(25, 59, 46, 0.15);
+
+  /* Surfaces & Backgrounds */
+  --bg-page: #F8F5EE;
+  --bg-surface: #F0ECE1;
+  --bg-card: #FFFFFF;
+  --bg-input: #FFFFFF;
+
+  /* Typography */
+  --font-serif: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  /* Shadows */
+  --shadow-sm: 0 4px 12px rgba(25, 59, 46, 0.05);
+  --shadow-md: 0 10px 25px rgba(25, 59, 46, 0.08);
+  --shadow-lg: 0 20px 45px rgba(25, 59, 46, 0.12);
+  --shadow-hover: 0 16px 36px rgba(217, 107, 59, 0.15);
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Dark Mode Theme Variables */
+[data-bs-theme="dark"] {
+  --color-ivory: #161A18;
+  --color-forest: #2B5746;
+  --color-forest-dark: #0D1411;
+  --color-forest-light: #366B57;
+  --color-sage: #283931;
+  --color-sage-light: #1E2823;
+  --color-dark: #EDEDEA;
+  --color-muted: #9BA098;
+  --color-white: #1C221F;
+  --color-border: rgba(220, 229, 216, 0.15);
+
+  --bg-page: #121514;
+  --bg-surface: #181E1B;
+  --bg-card: #1D2420;
+  --bg-input: #232C27;
+
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 20px 45px rgba(0, 0, 0, 0.5);
+}
+
+/* --------------------------------------------------------------------------
+   2. GLOBAL BASE STYLES & ACCESSIBILITY
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-page);
+  color: var(--color-dark);
+  line-height: 1.65;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  transition: background-color var(--transition-smooth), color var(--transition-smooth);
+}
+
+/* Typography Utility Classes */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+h1, h2, h3, h4, .display-4, .display-5, .hero-title, .section-title, .brand-title {
+  font-family: var(--font-serif);
+  color: var(--color-dark);
+  letter-spacing: -0.015em;
+}
+
+p, li, span, input, select, textarea, button {
+  font-family: var(--font-sans);
+}
+
+/* Skip to Content Accessible Link */
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 20px;
+  background: var(--color-orange);
+  color: #ffffff;
+  padding: 10px 18px;
+  z-index: 9999;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  transition: top var(--transition-fast);
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 15px;
+  outline: 3px solid var(--color-forest);
+}
+
+/* Focus Visibility (WCAG 2.1 AA Compliant) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-orange);
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   3. COLOR & UTILITY CLASSES
+   -------------------------------------------------------------------------- */
+.bg-ivory { background-color: var(--color-ivory) !important; }
+.bg-forest { background-color: var(--color-forest) !important; }
+.bg-forest-dark { background-color: var(--color-forest-dark) !important; }
+.bg-orange { background-color: var(--color-orange) !important; }
+.bg-sage { background-color: var(--color-sage) !important; }
+.bg-sage-light { background-color: var(--color-sage-light) !important; }
+.bg-surface { background-color: var(--bg-surface) !important; }
+.bg-card { background-color: var(--bg-card) !important; }
+
+.text-ivory { color: var(--color-ivory) !important; }
+.text-forest { color: var(--color-forest) !important; }
+.text-accent { color: var(--color-orange) !important; }
+.text-sage { color: var(--color-sage) !important; }
+.text-dark { color: var(--color-dark) !important; }
+.text-muted { color: var(--color-muted) !important; }
+
+.border-sage { border-color: var(--color-sage) !important; }
+.letter-spacing { letter-spacing: 0.08em; }
+.max-w-700 { max-width: 700px; }
+.max-w-500 { max-width: 500px; }
+
+/* --------------------------------------------------------------------------
+   4. BUTTONS & CONTROLS
+   -------------------------------------------------------------------------- */
+.btn-accent {
+  background-color: var(--color-orange);
+  border-color: var(--color-orange);
+  color: #FFFFFF;
+  border-radius: var(--radius-pill);
+  transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.btn-accent:hover,
+.btn-accent:focus {
+  background-color: var(--color-orange-hover);
+  border-color: var(--color-orange-hover);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn-accent:active {
+  transform: translateY(0);
+}
+
+.btn-forest {
+  background-color: var(--color-forest);
+  border-color: var(--color-forest);
+  color: var(--color-ivory);
+  border-radius: var(--radius-pill);
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.btn-forest:hover,
+.btn-forest:focus {
+  background-color: var(--color-forest-light);
+  border-color: var(--color-forest-light);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.btn-outline-forest {
+  color: var(--color-forest);
+  border: 2px solid var(--color-forest);
+  background: transparent;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.btn-outline-forest:hover,
+.btn-outline-forest:focus {
+  background-color: var(--color-forest);
+  color: var(--color-ivory);
+  transform: translateY(-2px);
+}
+
+[data-bs-theme="dark"] .btn-outline-forest {
+  color: var(--color-sage);
+  border-color: var(--color-sage);
+}
+
+[data-bs-theme="dark"] .btn-outline-forest:hover {
+  background-color: var(--color-sage);
+  color: var(--color-forest-dark);
+}
+
+.btn-outline-theme {
+  border: 1px solid var(--color-border);
+  color: var(--color-dark);
+  border-radius: var(--radius-pill);
+  padding: 4px 12px;
+  transition: all var(--transition-fast);
+}
+
+.btn-outline-theme:hover {
+  background-color: var(--color-sage);
+  color: var(--color-forest);
+}
+
+/* --------------------------------------------------------------------------
+   5. TOP BAR & HEADER NAVIGATION
+   -------------------------------------------------------------------------- */
+.top-bar {
+  background-color: var(--color-forest-dark);
+  color: var(--color-sage);
+  font-size: 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.text-divider {
+  color: rgba(220, 229, 216, 0.4);
+}
+
+.header {
+  background-color: var(--bg-card);
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color var(--transition-smooth), border-color var(--transition-smooth);
+}
+
+/* Brand Wordmark */
+.brand-symbol {
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, var(--color-forest), var(--color-forest-dark));
+  color: var(--color-orange);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-size: 1.35rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.brand-title {
+  display: block;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-forest);
+}
+
+[data-bs-theme="dark"] .brand-title {
+  color: #FFFFFF;
+}
+
+.brand-subtitle {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-muted);
+  font-weight: 500;
+}
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+  font-weight: 500;
+  color: var(--color-dark);
+  padding: 8px 14px !important;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--color-orange);
+}
+
+.navbar-nav .nav-link.active {
+  color: var(--color-orange);
+  font-weight: 600;
+}
+
+/* Cart Indicator Button */
+.btn-cart-indicator {
+  color: var(--color-forest);
+  background: var(--color-sage-light);
+  border: 1px solid var(--color-sage);
+  border-radius: var(--radius-pill);
+  padding: 6px 14px;
+  transition: all var(--transition-fast);
+}
+
+.btn-cart-indicator:hover {
+  background: var(--color-sage);
+  color: var(--color-orange);
+  transform: translateY(-1px);
+}
+
+.cart-count-badge {
+  font-size: 0.72rem;
+  padding: 3px 6px;
+  margin-left: 2px;
+  vertical-align: top;
+}
+
+.bounce-anim {
+  animation: badgeBounce 0.4s ease-out;
+}
+
+@keyframes badgeBounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.4); }
+  100% { transform: scale(1); }
+}
+
+/* --------------------------------------------------------------------------
+   6. HERO SECTION
+   -------------------------------------------------------------------------- */
+.hero-section {
+  position: relative;
+  background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-page) 100%);
+  overflow: hidden;
+}
+
+.hero-title {
+  color: var(--color-forest-dark);
+  line-height: 1.15;
+}
+
+[data-bs-theme="dark"] .hero-title {
+  color: #FFFFFF;
+}
+
+.hero-intro {
+  color: var(--color-muted);
+  font-size: 1.15rem;
+}
+
+.hero-image-wrapper {
+  perspective: 1000px;
+}
+
+.hero-image-card {
+  border: 6px solid var(--bg-card);
+  transition: transform var(--transition-smooth);
+}
+
+.hero-main-img {
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+.floating-badge {
+  position: absolute;
+  bottom: -20px;
+  left: 20px;
+  max-width: 320px;
+  border: 1px solid var(--color-border);
+  animation: floatSubtle 4s ease-in-out infinite alternate;
+}
+
+@keyframes floatSubtle {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-8px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-badge {
+    animation: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   7. FOOD MENU SECTION
+   -------------------------------------------------------------------------- */
+.menu-section {
+  position: relative;
+}
+
+.search-icon {
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.1rem;
+}
+
+#menu-search-input {
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  background-color: var(--bg-card);
+  color: var(--color-dark);
+  font-size: 0.95rem;
+  transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+#menu-search-input:focus {
+  border-color: var(--color-orange);
+  box-shadow: 0 0 0 4px rgba(217, 107, 59, 0.15);
+}
+
+/* Category Filter Buttons */
+.btn-filter {
+  background: var(--bg-card);
+  border: 1px solid var(--color-border);
+  color: var(--color-dark);
+  padding: 8px 20px;
+  border-radius: var(--radius-pill);
+  font-weight: 500;
+  font-size: 0.92rem;
+  transition: all var(--transition-fast);
+}
+
+.btn-filter:hover {
+  background: var(--color-sage-light);
+  color: var(--color-forest);
+}
+
+.btn-filter.active {
+  background: var(--color-forest);
+  color: var(--color-ivory);
+  border-color: var(--color-forest);
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+
+[data-bs-theme="dark"] .btn-filter.active {
+  background: var(--color-orange);
+  border-color: var(--color-orange);
+  color: #FFFFFF;
+}
+
+/* Menu Cards */
+.menu-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--color-border) !important;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.menu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md) !important;
+}
+
+.menu-card-img-wrapper {
+  overflow: hidden;
+  height: 220px;
+  background-color: var(--color-sage);
+}
+
+.menu-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.menu-card:hover .menu-img {
+  transform: scale(1.05);
+}
+
+.price-tag {
+  color: var(--color-orange);
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   8. ABOUT US SECTION
+   -------------------------------------------------------------------------- */
+.about-section {
+  position: relative;
+}
+
+.about-img-box {
+  border: 4px solid var(--bg-card);
+}
+
+.about-img {
+  height: 440px;
+  object-fit: cover;
+}
+
+.experience-card {
+  max-width: 260px;
+  border: 2px solid rgba(220, 229, 216, 0.2);
+}
+
+/* --------------------------------------------------------------------------
+   9. SPECIAL OFFERS SECTION
+   -------------------------------------------------------------------------- */
+.offer-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--color-border) !important;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.offer-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md) !important;
+}
+
+.offer-includes-list li {
+  font-size: 0.93rem;
+  color: var(--color-dark);
+}
+
+/* --------------------------------------------------------------------------
+   10. TESTIMONIALS SECTION
+   -------------------------------------------------------------------------- */
+.testimonial-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--color-border) !important;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md) !important;
+}
+
+.avatar-placeholder {
+  width: 44px;
+  height: 44px;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   11. ORDER FORM & SHOPPING CART
+   -------------------------------------------------------------------------- */
+.order-section {
+  position: relative;
+}
+
+.order-form-card,
+.cart-summary-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--color-border) !important;
+}
+
+.sticky-top-card {
+  position: sticky;
+  top: 90px;
+}
+
+.cart-items-list {
+  max-height: 380px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+/* Custom Scrollbar for Cart List */
+.cart-items-list::-webkit-scrollbar {
+  width: 6px;
+}
+.cart-items-list::-webkit-scrollbar-track {
+  background: var(--bg-surface);
+  border-radius: 4px;
+}
+.cart-items-list::-webkit-scrollbar-thumb {
+  background: var(--color-sage);
+  border-radius: 4px;
+}
+
+/* Cart Item Row */
+.cart-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cart-item-row:last-child {
+  border-bottom: none;
+}
+
+.cart-item-thumb {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.cart-item-details {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.cart-item-name {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--color-dark);
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cart-item-price {
+  font-size: 0.82rem;
+  color: var(--color-muted);
+}
+
+/* Quantity Stepper */
+.qty-stepper {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: var(--bg-surface);
+  overflow: hidden;
+}
+
+.btn-qty {
+  background: none;
+  border: none;
+  color: var(--color-dark);
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.btn-qty:hover {
+  background: var(--color-sage);
+}
+
+.qty-display {
+  width: 28px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--color-dark);
+}
+
+.btn-remove-item {
+  color: #DC3545;
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+
+.btn-remove-item:hover {
+  transform: scale(1.15);
+}
+
+/* --------------------------------------------------------------------------
+   12. CONTACT SECTION
+   -------------------------------------------------------------------------- */
+.contact-info-card {
+  background-color: var(--color-forest) !important;
+}
+
+.contact-icon-box {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   13. FOOTER
+   -------------------------------------------------------------------------- */
+.footer {
+  background-color: var(--color-forest-dark);
+}
+
+.footer-link {
+  color: var(--color-sage);
+  text-decoration: none;
+  transition: color var(--transition-fast), padding-left var(--transition-fast);
+}
+
+.footer-link:hover {
+  color: var(--color-orange);
+  padding-left: 4px;
+}
+
+.social-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(220, 229, 216, 0.1);
+  color: var(--color-sage);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.social-btn:hover {
+  background: var(--color-orange);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.back-to-top-link {
+  color: var(--color-sage);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.back-to-top-link:hover {
+  color: var(--color-orange);
+}
+
+/* --------------------------------------------------------------------------
+   14. RESPONSIVE MEDIA QUERIES
+   -------------------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+  .hero-main-img {
+    height: 340px;
+  }
+  .about-img {
+    height: 340px;
+  }
+  .sticky-top-card {
+    position: static;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero-main-img {
+    height: 260px;
+  }
+  .floating-badge {
+    position: static;
+    margin-top: 15px;
+  }
+  .btn-lg {
+    padding: 10px 18px;
+    font-size: 0.95rem;
+  }
+  .display-4 {
+    font-size: 2.1rem;
+  }
+  .display-5 {
+    font-size: 1.8rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   15. PRINT STYLESHEET (CLEAN RECEIPT PRINTING)
+   -------------------------------------------------------------------------- */
+@media print {
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+  .header, .top-bar, .hero-section, .menu-section, .about-section, .offers-section, .testimonials-section, .order-section, .contact-section, .footer, .skip-link, .modal-footer {
+    display: none !important;
+  }
+  .modal {
+    position: static !important;
+    display: block !important;
+    opacity: 1 !important;
+  }
+  .modal-dialog {
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+  .modal-content {
+    border: none !important;
+    box-shadow: none !important;
+  }
+  .modal-header {
+    background: none !important;
+    color: #000000 !important;
+    border-bottom: 2px solid #000000 !important;
+  }
+  .modal-header .btn-close {
+    display: none !important;
+  }
+}
